@@ -2,14 +2,10 @@ import streamlit as st
 
 st.title("Firestore Rule Analyzer")
 
-user_line = st.text_input("Type the first Firestore rule line")
-
-mode = 'normal'
-#else == 'Teaching'
-
-import streamlit as st
+mode = "normal"  # later you can change this to selectbox
 
 correct_first_line = "service cloud.firestore {"
+
 user_line = st.text_input("Type the first Firestore rule line")
 
 if user_line:
@@ -32,6 +28,5 @@ if user_line:
                     f"expected '{correct_first_line[i]}' but got '{user_line[i]}'"
                 )
 
-        # if user input is shorter or longer
         if len(user_line) != len(correct_first_line):
             st.warning("Length mismatch between input and expected rule.")
