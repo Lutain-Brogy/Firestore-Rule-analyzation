@@ -57,5 +57,4 @@ if user_line:
                     f"Expected '{correct_second_line[i]}' but got '{user_line[i]}'"
                 )
 
-        if len(user_line) != len(correct_second_line):
-            st.warning("Length mismatch between input and expected rule.")
+       
