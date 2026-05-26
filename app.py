@@ -31,7 +31,9 @@ if user_line:
         if len(user_line) != len(correct_first_line):
             st.warning("Length mismatch between input and expected rule.")
 
-correct_second_line = "match /database/{b} {"
+b = user_line
+
+correct_second_line = f"match /database/{b} {{"
 
 user_line = st.text_input("Type second line")
 
