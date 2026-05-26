@@ -33,7 +33,7 @@ if user_line:
 
 b = user_line
 
-correct_second_line = f"match /database/{b}"
+correct_second_line = f"match /database/{b"
 
 user_line = st.text_input("Type second line")
 
