@@ -14,4 +14,4 @@ if user_line:  # only run after user types something
     else:
         st.error("The first line is wrong.")
         st.code(f"Expected: {correct_first_line}")
-        st.code(f"Got: {user_line}")
+        st.write(f"Got: {user_line}")
