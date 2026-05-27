@@ -5,10 +5,11 @@ st.title("Firestore RuleSense")
 mode = 'normal'
 #else mode == 'teaching'
 
+
 choice = st.selectbox(
-"What type of rule do you want?", 
-   [
-        "An allow read only",
+    "What rule would you like to write?",
+    [
+        "Allow read only",
 #        "Allow write only",
  #       "Allow read and write",
   #      "Deny all access",
@@ -17,9 +18,10 @@ choice = st.selectbox(
     ]
 )
 
-if choice == "An allow read only":
+
+if choice == "Allow read only":
     edit_choice = st.selectbox(
-        "Select the read rule typeyou want:",
+        "Select read rule type:",
        [
             "read public access",
             "read authenticated access",
@@ -33,8 +35,4 @@ if choice == "An allow read only":
 
 
 
-
-
-
-
-      
+       
