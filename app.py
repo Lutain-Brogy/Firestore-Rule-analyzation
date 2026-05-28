@@ -30,12 +30,13 @@ if choice == "Allow read only":
     )
 
     if edit_choice == "read public access":
+        st.write('Write  all values then copy rule') 
 
-        user_input = st.text_input("A value")
+        user_input = st.text_input("A, the collection")
         A = user_input
 
-        B_input = st.text_input("B value")
-        C_input = st.text_input("C value")
+        B_input = st.text_input("B, the document")
+        C_input = st.text_input("C, the subcollection")
         D_input = st.text_input("D value")
 
         B = A if B_input == "any" else B_input
@@ -58,5 +59,5 @@ service cloud.firestore {{
 """)
 
 
-h
+
        
