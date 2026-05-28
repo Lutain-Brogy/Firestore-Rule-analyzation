@@ -48,7 +48,7 @@ rules_version = '2';
 service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
-    match /{A}/{B}/{C}/{D} {{
+    match /{A}/{{B}}/{C}/{{D}} {{
 
       allow read: if request.auth != null;
 
@@ -58,5 +58,5 @@ service cloud.firestore {{
 """)
 
 
-
+h
        
