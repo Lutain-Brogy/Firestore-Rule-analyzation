@@ -67,21 +67,21 @@ service cloud.firestore {{
              "time based"]
         )
 
-        if auth_choice == 'only creater can read':
-            st.write('Write  all values then copy rule') 
+   if auth_choice == 'only creater can read':
+    st.write('Write  all values then copy rule') 
 
-            user_input = st.text_input("A, the collection")
-            A = user_input
+    user_input = st.text_input("A, the collection")
+    A = user_input
 
-            B_input = st.text_input("B, the document")
-            C_input = st.text_input("C, the subcollection")
-            D_input = st.text_input("D value")
+    B_input = st.text_input("B, the document")
+    C_input = st.text_input("C, the subcollection")
+    D_input = st.text_input("D value")
 
-            B = A if B_input == "any" else B_input
-            C = B if C_input == "any" else C_input
-            D = C if D_input == "any" else D_input
+    B = A if B_input == "any" else B_input
+    C = B if C_input == "any" else C_input
+    D = C if D_input == "any" else D_input
 
-          st.code(f"""
+    st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
