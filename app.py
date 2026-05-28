@@ -57,15 +57,15 @@ service cloud.firestore {{
   }}
 }}
 """)
-        if edit_choice == 'read authenticated access':
-           auth_choice = st.selectbox(
+       if edit_choice == 'read authenticated access':
+
+    auth_choice = st.selectbox(
         'Select your authentication type of rule',
         ["only creater can read",
          "role-based",
          "custorm based",
          "time based"]
     )
-
         if auth_choice == 'only creater can read':
            st.write('Write  all values then copy rule') 
 
