@@ -20,32 +20,29 @@ choice = st.selectbox(
 
 
 if choice == "Allow read only":
+
     edit_choice = st.selectbox(
         "Select read rule type:",
-       [
+        [
             "read public access",
             "read authenticated access",
-          #  "read role-based access",
-           # "read owner-based access",
-            #"read shared list access",
-            #"read time-based access",
-            #"read field-based conditions"
         ]
     )
 
-if edit_choice = 'read public access' 
-user_input = st.text_input("A value")
-A = user_input
+    if edit_choice == "read public access":
 
-B_input = st.text_input("B value")
-C_input = st.text_input("C value")
-D_input = st.text_input("D value")
+        user_input = st.text_input("A value")
+        A = user_input
 
-B = A if B_input == "any" else B_input
-C = A if C_input == "any" else C_input
-D = A if D_input == "any" else D_input
+        B_input = st.text_input("B value")
+        C_input = st.text_input("C value")
+        D_input = st.text_input("D value")
 
-st.code(f"""
+        B = A if B_input == "any" else B_input
+        C = B if C_input == "any" else C_input
+        D = C if D_input == "any" else D_input
+
+        st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
@@ -59,8 +56,6 @@ service cloud.firestore {{
   }}
 }}
 """)
-
-
 
 
 
