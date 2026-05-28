@@ -66,8 +66,8 @@ service cloud.firestore {{
              "custorm based",
              "time based"]
         )
-
-   if auth_choice == 'only creater can read':
+        
+        if auth_choice == 'only creater can read':
     st.write('Write  all values then copy rule') 
 
     user_input = st.text_input("A, the collection")
@@ -87,7 +87,7 @@ rules_version = '2';
 service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
-    match /{A}/{{{B}}}/{C}/{{{D}}} {{
+    match /{A}/{{{B}}}/{C}/{D} {{
 
       allow read: if request.auth != null
                   && request.auth.token.admin == true;
