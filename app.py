@@ -81,7 +81,7 @@ service cloud.firestore {{
             C = B if C_input == "any" else C_input
             D = C if D_input == "any" else D_input
 
-        st.code(f"""
+          st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
