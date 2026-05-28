@@ -30,7 +30,7 @@ if choice == "Allow read only":
     )
 
     if edit_choice == "read public access":
-    st.write('Write  all values then copy rule') 
+       st.write('Write  all values then copy rule') 
 
     user_input = st.text_input("A, the collection")
     A = user_input
