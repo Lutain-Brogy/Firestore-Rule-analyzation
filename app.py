@@ -37,9 +37,9 @@ if choice == "Allow read only":
        C_input = st.text_input("C, the subcollection")
        D_input = st.text_input("D value")
 
-    B = A if B_input == "any" else B_input
-    C = B if C_input == "any" else C_input
-    D = C if D_input == "any" else D_input
+       B = A if B_input == "any" else B_input
+       C = B if C_input == "any" else C_input
+       D = C if D_input == "any" else D_input
 
     st.code(f"""
 rules_version = '2';
