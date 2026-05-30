@@ -32,7 +32,6 @@ if choice == "Allow read only":
        st.write("Write all values then copy rule")
 
        A = st.text_input("A, the collection")
-
        B_input = st.text_input("B, the document")
        C_input = st.text_input("C, the subcollection")
        D_input = st.text_input("D value")
