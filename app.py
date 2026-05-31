@@ -155,3 +155,35 @@ service cloud.firestore {{
   }}
 }}
 """)
+
+          elif auth_choice == 'time based':
+               st.write("Write all values then copy rule")
+               A = st.text_input("A, the collection")
+               B = st.text_input("B, the document")
+               C = st.text_input("C, the subcollection")
+               D = st.text_input("D value")
+               E = st.text_input('From whem?')
+               F = st.text_input('To when?')
+        
+               B = A if B == "any" else B
+               C = B if C == "any" else C
+               D = C if D == "any" else D
+               st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
+
+    match /{A}/{{{B}}}/{C}/{{{D}}} {{
+
+      allow read: if request.auth != null
+                  && request.time.hours >= {E}
+                  && request.time.hours < {F};
+
+      allow write: if false;
+
+    }}
+  }}
+}}
+""")
+              
