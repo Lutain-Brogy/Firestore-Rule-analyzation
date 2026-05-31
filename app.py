@@ -59,6 +59,7 @@ service cloud.firestore {{
           auth_choice = st.selectbox(
           "Select your authentication type of rule",
         [
+            "logged in users",
             "only creator can read",
             "role-based",
             "custom based",
@@ -86,6 +87,33 @@ service cloud.firestore {{
 
       allow read: if request.auth != null
                   && request.auth.token.admin == true;
+
+    }}
+  }}
+}}
+""")
+
+          elif auth_choice == 'logged in users':
+               st.write("Write all values then copy rule")
+
+               A = st.text_input("A, the collection")
+               B = st.text_input("B, the document")
+               C = st.text_input("C, the subcollection")
+               D = st.text_input("D value")
+
+               B = A if B == "any" else B
+               C = B if C == "any" else C
+               D = C if D == "any" else D
+
+               st.ccode(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
+
+    match /{A}/{{{B}}}/{C}/{{{D}}} {{
+
+      allow read: if request.auth != null;
 
     }}
   }}
