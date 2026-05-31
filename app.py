@@ -92,7 +92,10 @@ service cloud.firestore {{
   }}
 }}
 """)
+          elif auth_choice == 'custorm based':
+              st.write("Talk to Lutzet for this one, don’t worry he doesn’t charge.")
 
+        
           elif auth_choice == 'logged in users':
                st.write("Write all values then copy rule")
 
