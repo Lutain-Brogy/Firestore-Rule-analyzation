@@ -65,7 +65,7 @@ service cloud.firestore {{
             "time based"
         ]
     )
-               if auth_choice == "only creator can read":
+          if auth_choice == "only creator can read":
 
         st.write("Write all values then copy rule")
 
