@@ -69,11 +69,26 @@ service cloud.firestore {{
               st.write("Write all values then copy rule")
 
               A = st.text_input("A, the collection")
-              B_input = st.text_input("B, the document")
-              C_input = st.text_input("C, the subcollection")
-              D_input = st.text_input("D value")
+              B = st.text_input("B, the document")
+              C = st.text_input("C, the subcollection")
+              D = st.text_input("D value")
 
-              B = A if B_input == "any" else B_input
-              C = B if C_input == "any" else C_input
-              D = C if D_input == "any" else D_input
+              B = A if B == "any" else B
+              C = B if C == "any" else C
+              D = C if D == "any" else D
+              st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
+
+    match /{A}/{{{B}}}/{C}/{{{D}}} {{
+
+      allow read: if request.auth != null
+                  && request.auth.token.admin == true;
+
+    }}
+  }}
+}}
+""")
 
