@@ -35,11 +35,11 @@ if choice == "Allow read only":
        D = st.text_input("D value")
 
     
-         B = A if B == "any" else B
-         C = B if C == "any" else C
-         D = C if D == "any" else D
+       B = A if B == "any" else B
+       C = B if C == "any" else C
+       D = C if D == "any" else D
 
-   st.code(f"""
+       st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
