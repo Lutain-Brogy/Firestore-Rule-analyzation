@@ -9,6 +9,7 @@ choice = st.selectbox(
     "What rule would you like to write?",
     [
         "Allow read only",
+        "Create role",
 #        "Allow write only",
  #       "Allow read and write",
   #      "Deny all access",
@@ -16,6 +17,15 @@ choice = st.selectbox(
         
     ]
 )
+
+#if choice == "create role":
+ #   A = st.text_input("Create your role(s)")
+
+  #  st.code(f"""
+#admin.auth().setCustomUserClaims(uid, {{
+ # role: "{A}"
+#}});
+#""")
 
 if choice == "Allow read only":
 
