@@ -105,7 +105,7 @@ service cloud.firestore {{
                C = B if C == "any" else C
                D = C if D == "any" else D
 
-               st.ccode(f"""
+               st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
