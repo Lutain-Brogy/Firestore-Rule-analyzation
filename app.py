@@ -60,13 +60,13 @@ service cloud.firestore {{
           "Select your authentication type of rule",
         [
             "logged in users",
-            "only creator can read",
+            "only admin can read",
             "role-based",
             "custom based",
             "time based"
         ]
     )
-          if auth_choice == "only creator can read":
+          if auth_choice == "only admin can read":
               st.write("Write all values then copy rule")
 
               A = st.text_input("A, the collection")
