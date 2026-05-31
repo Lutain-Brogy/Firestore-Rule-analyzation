@@ -126,7 +126,7 @@ service cloud.firestore {{
                B = st.text_input("B, the document")
                C = st.text_input("C, the subcollection")
                D = st.text_input("D value")
-               E = st.txt_input("Roles that can read, sapce by using ',' ") 
+               E = st.text_input("Roles that can read, sapce by using ',' ") 
 
                B = A if B == "any" else B
                C = B if C == "any" else C
