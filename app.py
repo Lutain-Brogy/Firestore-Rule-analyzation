@@ -54,7 +54,7 @@ service cloud.firestore {{
 }}
 """)
         
-     elif edit_choice == "read authenticated access":
+    elif edit_choice == "read authenticated access":
 
           auth_choice = st.selectbox(
           "Select your authentication type of rule",
