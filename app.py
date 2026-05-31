@@ -9,7 +9,7 @@ choice = st.selectbox(
     "What rule would you like to write?",
     [
         "Allow read only",
-        "Create role",
+#        "Create role",
 #        "Allow write only",
  #       "Allow read and write",
   #      "Deny all access",
