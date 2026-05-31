@@ -29,17 +29,17 @@ if choice == "Allow read only":
     if edit_choice == "read public access":
        st.write(f"Write all values then copy rule")
 
-       A = st.text_input("A, the collection")
-       B = st.text_input("B, the document")
-       C = st.text_input("C, the subcollection")
-       D = st.text_input("D value")
+         A = st.text_input("A, the collection")
+         B = st.text_input("B, the document")
+         C = st.text_input("C, the subcollection")
+         D = st.text_input("D value")
 
     
-       B = A if B == "any" else B
-       C = B if C == "any" else C
-       D = C if D == "any" else D
+         B = A if B == "any" else B
+         C = B if C == "any" else C
+         D = C if D == "any" else D
 
-    st.code(f"""
+   st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
