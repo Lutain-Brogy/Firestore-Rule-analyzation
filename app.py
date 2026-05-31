@@ -17,3 +17,13 @@ choice = st.selectbox(
     ]
 )
 
+if choice == "Allow read only":
+
+    edit_choice = st.selectbox(
+        "Select read rule type:",
+        [
+            "read public access",
+            "read authenticated access",
+        ]
+    )
+
