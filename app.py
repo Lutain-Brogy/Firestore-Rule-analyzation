@@ -92,7 +92,7 @@ service cloud.firestore {{
   }}
 }}
 """)
-          elif auth_choice == 'custorm based':
+          elif auth_choice == 'custom based':
               st.write("Talk to Lutzet for this one, don’t worry he doesn’t charge.")
 
         
