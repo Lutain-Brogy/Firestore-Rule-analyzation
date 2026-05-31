@@ -29,12 +29,12 @@ if choice == "Allow read only":
     if edit_choice == "read public access":
        st.write("Write all values then copy rule")
 
-       A_input = st.text_input("A, the collection")
-       B_input = st.text_input("B, the document")
-       C_input = st.text_input("C, the subcollection")
-       D_input = st.text_input("D value")
+       A = st.text_input("A, the collection")
+       B = st.text_input("B, the document")
+       C = st.text_input("C, the subcollection")
+       D = st.text_input("D value")
 
-       A = A_input
+    
        B = A if B_input == "any" else B_input
        C = B if C_input == "any" else C_input
        D = C if D_input == "any" else D_input
