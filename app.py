@@ -65,4 +65,17 @@ service cloud.firestore {{
             "time based"
         ]
     )
+               if auth_choice == "only creator can read":
+
+        st.write("Write all values then copy rule")
+
+        A = st.text_input("A, the collection")
+
+        B_input = st.text_input("B, the document")
+        C_input = st.text_input("C, the subcollection")
+        D_input = st.text_input("D value")
+
+        B = A if B_input == "any" else B_input
+        C = B if C_input == "any" else C_input
+        D = C if D_input == "any" else D_input
 
