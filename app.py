@@ -131,6 +131,7 @@ service cloud.firestore {{
                B = A if B == "any" else B
                C = B if C == "any" else C
                D = C if D == "any" else D
+              
               st.code(f"""
 rules_version = '2';
 
