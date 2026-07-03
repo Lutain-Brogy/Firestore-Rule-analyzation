@@ -25,7 +25,7 @@ with tab1:
                       "🔗 Cross-Document Checks"
                      ]
                     )
- if read =='🌍Public Access':
+ if read =='🌍 Public Access':
         user_input = st.text_input
         A = st.text_imput('The collection')
         B = st.text_input("The document")
