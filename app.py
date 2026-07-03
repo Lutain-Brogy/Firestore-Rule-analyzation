@@ -34,7 +34,7 @@ with tab1:
                          ["Any", "your own"]
                         )
         
-       st.code:(f"
+        st.code:(f"
 rules_version = '2';
 
 service cloud.firestore {
