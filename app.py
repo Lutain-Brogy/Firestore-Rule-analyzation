@@ -33,7 +33,7 @@ with tab1:
         D = st.selectbox('type',
                          ["Any", "your own"]
                         )
-   st.code(f"""
+        st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
