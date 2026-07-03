@@ -29,15 +29,17 @@ if choice == 'Standard operation':
                     "🔗 Cross-Document Checks"
                 ]
             )
-if read == '🌍 Public Access':
-    A = st.text_input('The collection')
-    B = st.text_input("The document")
-    C = st.text_input('The subcollection')
-    D = st.selectbox(
-        'type',
-        ["Any", "your own"]
-    )
-    st.code(f"""
+
+            if read == '🌍 Public Access':
+                A = st.text_input('The collection')
+                B = st.text_input("The document")
+                C = st.text_input('The subcollection')
+                D = st.selectbox(
+                    'type',
+                    ["Any", "your own"]
+                )
+
+                st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
@@ -49,9 +51,7 @@ service cloud.firestore {{
 
   }}
 }}
-""")  
+""")
 
-    with tab2:
- st.write('hello')
-
-
+        with tab2:
+            st.write('hello')
