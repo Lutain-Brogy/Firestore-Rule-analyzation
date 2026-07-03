@@ -47,7 +47,7 @@ service cloud.firestore {{
 }}
 """)
 
-with tab2
+with tab2:
  st.write('hello')
 
 
