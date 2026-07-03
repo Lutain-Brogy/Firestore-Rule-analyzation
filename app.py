@@ -33,12 +33,11 @@ with tab1:
         D = st.selectbox('type',
                          ["Any", "your own"]
                         )
-        
-        st.code:(f"
+        st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {
-  match /databases/{database}/documents {
+  match /databases/{{database}}/documents {
 
     match /{A}/{B}/{C}/{D} {
       allow read: if true;
@@ -46,7 +45,7 @@ service cloud.firestore {
 
   }
 }
-
+""")
 
 
 
