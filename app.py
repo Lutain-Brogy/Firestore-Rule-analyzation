@@ -13,7 +13,7 @@ if choice == 'Standard operation':
 with rule1:
  tab1, tab2 = st.tabs(["allow", "deny"]) 
 
-with tab1
+with tab1:
  read = st.selectbox('Select the read type of you choice'
                      ["🌍 Public Access",
                       "🔐 Authentication",
