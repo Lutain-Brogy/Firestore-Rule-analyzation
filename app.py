@@ -25,14 +25,14 @@ with tab1:
                       "🔗 Cross-Document Checks"
                      ]
                     )
- if read =='🌍 Public Access':
-        user_input = st.text_input
-        A = st.text_imput('The collection')
-        B = st.text_input("The document")
-        C = st.text_input('The subcollection')
-        D = st.selectbox('type',
-                         ["Any", "your own"]
-                        )
+if read == '🌍 Public Access':
+    A = st.text_input('The collection')
+    B = st.text_input("The document")
+    C = st.text_input('The subcollection')
+    D = st.selectbox(
+        'type',
+        ["Any", "your own"]
+    )
         st.code(f"""
 rules_version = '2';
 
