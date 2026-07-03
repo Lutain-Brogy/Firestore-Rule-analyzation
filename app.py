@@ -14,7 +14,7 @@ with rule1:
  tab1, tab2 = st.tabs(["allow", "deny"]) 
 
 with tab1:
- read = st.selectbox('Select the read type of you choice'
+ read = st.selectbox('Select the read type of you choice',
                      ["🌍 Public Access",
                       "🔐 Authentication",
                       "👤 User Identity",
