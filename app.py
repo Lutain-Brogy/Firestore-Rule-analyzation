@@ -25,6 +25,27 @@ with tab1:
                       "🔗 Cross-Document Checks"
                      ]
                     )
+    if read =='Public access':
+        user_input = st.text_input
+        A = st.text_imput('The collection')
+        B = st.text_input("The document")
+        C = st.text_input('The subcollection')
+        D = st.selectbox('type',
+                         ["Any", "your own"]
+                        )
+        
+       st.code:(f"
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /{A}/{B}/{C}/{D} {
+      allow read: if true;
+    }
+
+  }
+}
 
 
 
