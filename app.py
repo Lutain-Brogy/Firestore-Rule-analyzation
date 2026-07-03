@@ -11,4 +11,22 @@ if choice == 'Standard operation':
    rule1, rule2, rule3, rule4 = st.tabs(["read type", "write type" , "create role", "read and write type"])
 
 with rule1:
- st.write('hey')
+ tab1, tab2 = st.tabs(["allow", "deny"]) 
+
+with tab1
+ read = st.selectbox('Select the read type of you choice'
+                     ["🌍 Public Access",
+                      "🔐 Authentication",
+                      "👤 User Identity",
+                      "👥 Ownership & Membership",
+                      "🛡️ Roles & Permissions", 
+                      "📅 Time-Based Rules",
+                      "📄 Document-Based Rules",
+                      "🔗 Cross-Document Checks"
+                     ]
+                    )
+
+
+
+
+
