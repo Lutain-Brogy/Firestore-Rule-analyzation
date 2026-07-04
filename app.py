@@ -119,8 +119,8 @@ elif F_choice == "Admin":
     rule = "&& request.auth.token.role == 'admin'"
 
 elif F_choice == "Specific UID":
-    user_input = st.text_input
-    rule = f"&& request.auth.uid == '{user_input}'"
+    G = st.text_input('UID')
+    rule = f"&& request.auth.uid == '{G}'"
 
 elif F_choice == "Role based":
     user_input = st.text_input
