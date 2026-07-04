@@ -98,23 +98,7 @@ service cloud.firestore {{
                 else:
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input
-                E_choice = st.selectbox('Choose permission',
-    ["Owner only", "Admin", "Specific UID", "Role based"]
-)
-
-mapping = {
-    
-    "Owner only": "request.auth.uid == resource.data.ownerId",
-    
-    "Admin": "request.auth.token.role == 'admin'",
-    
-    "Specific UID": "request.auth.uid == 'SPECIFIC_UID_HERE'",
-    
-    "Role based": "request.auth.token.role == 'ROLE_NAME'"
-}
-
-E_choice = mapping
-
+               
 st.code(f"""
 rules_version = '2';
 
@@ -124,7 +108,7 @@ service cloud.firestore {{
     match /{A}/{B}/{C}/{D} {{
 
       allow read: if request.auth != null
-                  && request.auth.uid == '{{{E_choice}}}';
+                  []
 
     }}
 
