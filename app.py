@@ -39,7 +39,8 @@ if choice == 'Standard operation':
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input 
                      
-                E = st.selectbox(["deny", "allow"])
+                E = st.selectbox('Choose permission',
+                    ["deny", "allow"])
                 if E == "allow":
                      E = "true"
                 else:
