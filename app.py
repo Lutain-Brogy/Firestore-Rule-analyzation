@@ -36,6 +36,10 @@ if choice == 'Standard operation':
                     ["Any", "your own"]
                 )
                 E = st.selectbox(["deny", "allow"])
+                in E:
+                 'deny'= 'false'
+                 'allow' = 'true'
+
 
                 st.code(f"""
 rules_version = '2';
