@@ -31,15 +31,19 @@ if choice == 'Standard operation':
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
-                D = st.selectbox(
-                   'type',
-                    ["Any", "your own"]
-                )
+                D_choice = st.selectbox("type?",
+                                        ["Any", "your own"])
+                 if D_choice == "Any":
+                     D = "any"
+                 else:
+                     user_input = st.text_input("Enter your wildcard")
+                     D = user_input 
+                     
                 E = st.selectbox(["deny", "allow"])
-                in E:
-                 'deny'= 'false'
-                 'allow' = 'true'
-
+                 if E == "allow":
+                     E = "true"
+                 else:
+                     E = "false"
 
                 st.code(f"""
 rules_version = '2';
