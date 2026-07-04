@@ -100,7 +100,7 @@ service cloud.firestore {{
                 else:
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input 
-                E = st.selectbox('Choose permission type'
+                E = st.selectbox('Choose permission type',
                                  ["deny","allow"])
                 if E == 'allow':
                     E = '!'
