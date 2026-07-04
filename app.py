@@ -87,17 +87,20 @@ service cloud.firestore {{
   }}
 }}
 """)
+        
+        
         if read == "🔐 Authentication":
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
-                D_choice = st.selectbox("type?",
+                D
+                E_choice = st.selectbox("type?",
                                         ["Any", "your own"])
-                if D_choice == "Any":
-                     D = "{any}"
+                if E_choice == "Any":
+                     E = "{any}"
                 else:
                      user_input = st.text_input("Enter your wildcard")
-                     D = user_input
+                     E = user_input
                
 st.code(f"""
 rules_version = '2';
