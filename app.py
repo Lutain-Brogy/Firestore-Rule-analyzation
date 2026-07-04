@@ -113,8 +113,6 @@ service cloud.firestore {{
 
 user_input = st.text_input("Enter value (UID or Role)")
 
-mapping = {
-
     'Owner only' == "&& request.auth.uid == resource.data.ownerId",
 
     'Admin' == "&& request.auth.token.role == 'admin'",
@@ -124,8 +122,7 @@ mapping = {
     'Role based' == f"&& request.auth.token.role == '{user_input}'",
 
     "Logged in" == ""
-}
-mapping = F_choice
+
 
 
 st.code(f"""
