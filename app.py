@@ -16,6 +16,7 @@ if choice == 'Standard operation':
         read = st.selectbox(
                 'Select the read type of your choice',
                 [
+                    "Open guider",
                     "🌍 Public Access",
                     "🔐 Authentication",
                     "👤 User Identity",
@@ -59,6 +60,7 @@ service cloud.firestore {{
   }}
 }}
 """)
+            
 
         
             
