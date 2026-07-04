@@ -137,7 +137,7 @@ service cloud.firestore {{
     match /{A}/{B}/{C}/{D} {{
 
       allow read: if request.auth {E}= null
-                  {F}
+                  {F_choice}
 
     }}
 
