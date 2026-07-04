@@ -27,7 +27,7 @@ if choice == 'Standard operation':
                 ]
             )
 
-              if read == '🌍 Public Access':
+        if read == '🌍 Public Access':
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
