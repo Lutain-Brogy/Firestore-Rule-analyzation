@@ -18,7 +18,6 @@ if choice == 'Standard operation':
                 [
                     "🌍 Public/logged in Access",
                     "🔐 Authentication",
-                    "👤 User Identity",
                     "👥 Ownership & Membership",
                     "📅 Time-Based Rules",
                     "📄 Document-Based Rules",
