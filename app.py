@@ -93,15 +93,39 @@ service cloud.firestore {{
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
-                D
-                E_choice = st.selectbox("type?",
+                D_choice = st.selectbox("type?",
                                         ["Any", "your own"])
-                if E_choice == "Any":
-                     E = "{any}"
+                if D_choice == "Any":
+                     D = "{any}"
                 else:
                      user_input = st.text_input("Enter your wildcard")
-                     E = user_input
-               
+                     D = user_input 
+                E = st.selectbox('Choose permission type'
+                                 ["deny","allow")
+                if E == 'allow':
+                    E = '!'
+                else:
+                    E = '='
+                F_choice = st.selectbox('Choose permission',
+    ["Logged in", "Owner only", "Admin", "Specific UID", "Role based"]
+)
+
+user_input = st.text_input("Enter value (UID or Role)")
+
+mapping = {
+
+    "Owner only": "&& request.auth.uid == resource.data.ownerId",
+
+    "Admin": "&& request.auth.token.role == 'admin'",
+
+    "Specific UID": f"&& request.auth.uid == '{user_input}'",
+
+    "Role based": f"&& request.auth.token.role == '{user_input}'",
+
+    "Logged in": ""
+}
+mapping = F
+
                      st.code(f"""
 rules_version = '2';
 
@@ -110,8 +134,8 @@ service cloud.firestore {{
 
     match /{A}/{B}/{C}/{D} {{
 
-      allow read: if request.auth != null
-                  []
+      allow read: if request.auth {E}= null
+                  {F}
 
     }}
 
