@@ -124,7 +124,7 @@ service cloud.firestore {
     match /{A}/{B}/{C}/{D} {
 
       allow read: if request.auth != null
-                  && request.auth.uid == "SPECIFIC_UID_HERE";
+                  && request.auth.uid == "{E_condition}";
 
     }
 
