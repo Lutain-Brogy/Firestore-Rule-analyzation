@@ -107,7 +107,7 @@ service cloud.firestore {{
                 else:
                     E = '='
                
-               F_choice = st.selectbox('Choose permission',
+            F_choice = st.selectbox('Choose permission',
     ["Logged in", "Owner only", "Admin", "Specific UID", "Role based"]
 )
 
