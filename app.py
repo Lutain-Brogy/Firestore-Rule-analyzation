@@ -118,18 +118,19 @@ E = mapping[E_choice]
 st.code(f"""
 rules_version = '2';
 
-service cloud.firestore {
-  match /databases/{database}/documents {
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
 
-    match /{A}/{B}/{C}/{D} {
+    match /{A}/{B}/{C}/{D} {{
 
       allow read: if request.auth != null
                   && request.auth.uid == "{E_condition}";
 
-    }
+    }}
 
-  }
-}
+  }}
+}}
+""")
 
             
 
