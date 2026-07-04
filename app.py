@@ -98,7 +98,7 @@ service cloud.firestore {{
                 else:
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input
-                E_choice = st.selectbox("Choose permission",
+                E_choice = st.selectbox('Choose permission',
     ["Owner only", "Admin", "Specific UID", "Role based"]
 )
 
