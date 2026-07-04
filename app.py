@@ -55,7 +55,7 @@ service cloud.firestore {{
   }}
 }}
 """)       
-             if read1 == 'Public':
+            if read1 == 'Public':
                 A = st.text_input('The collection')
                 B = st.text_input("The document")     
                 C = st.text_input('The subcollection')
