@@ -111,7 +111,6 @@ service cloud.firestore {{
     ["Logged in", "Owner only", "Admin", "Specific UID", "Role based"]
 )
 
-user_input = st.text_input("Enter value (UID or Role)")
 
 if F_choice == "Owner only":
     rule = "&& request.auth.uid == resource.data.ownerId"
@@ -140,7 +139,7 @@ service cloud.firestore {{
     match /{A}/{B}/{C}/{D} {{
 
       allow read: if request.auth {E}= null
-                  {F_choice}
+                  {rule}
 
     }}
 
