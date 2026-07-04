@@ -106,7 +106,24 @@ service cloud.firestore {{
                     E = '!'
                 else:
                     E = '='
-                F_choice = st.selectbox('Choose permission',
+               
+                     st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
+
+    match /{A}/{B}/{C}/{D} {{
+
+      allow read: if request.auth {E}= null
+                  {F}
+
+    }}
+
+  }}
+}}
+""")
+                 F_choice = st.selectbox('Choose permission',
     ["Logged in", "Owner only", "Admin", "Specific UID", "Role based"]
 )
 
@@ -126,22 +143,6 @@ mapping = {
 }
 mapping = F
 
-                     st.code(f"""
-rules_version = '2';
-
-service cloud.firestore {{
-  match /databases/{{database}}/documents {{
-
-    match /{A}/{B}/{C}/{D} {{
-
-      allow read: if request.auth {E}= null
-                  {F}
-
-    }}
-
-  }}
-}}
-""")
 
             
 
