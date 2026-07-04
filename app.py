@@ -117,9 +117,9 @@ mapping = {
 
     "Admin": "&& request.auth.token.role == 'admin'",
 
-    "Specific UID": f"&& request.auth.uid == '{user_input}'",
+    "Specific UID": f"&& request.auth.uid == '{st.text_input}'",
 
-    "Role based": f"&& request.auth.token.role == '{user_input}'",
+    "Role based": f"&& request.auth.token.role == '{st.text_input}'",
 
     "Logged in": ""
 }
