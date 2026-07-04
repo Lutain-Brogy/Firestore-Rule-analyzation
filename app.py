@@ -107,22 +107,28 @@ service cloud.firestore {{
                 else:
                     E = '='
                
-                F_choice = st.selectbox('Choose permission',
+               F_choice = st.selectbox('Choose permission',
     ["Logged in", "Owner only", "Admin", "Specific UID", "Role based"]
 )
 
-mapping = {
+user_input = st.text_input("Enter value (UID or Role)")
 
-    "Owner only": "&& request.auth.uid == resource.data.ownerId",
+if F_choice == "Owner only":
+    rule = "&& request.auth.uid == resource.data.ownerId"
 
-    "Admin": "&& request.auth.token.role == 'admin'",
+elif F_choice == "Admin":
+    rule = "&& request.auth.token.role == 'admin'"
 
-    "Specific UID": f"&& request.auth.uid == '{st.text_input}'",
+elif F_choice == "Specific UID":
+    user_input = st.text_input
+    rule = f"&& request.auth.uid == '{user_input}'"
 
-    "Role based": f"&& request.auth.token.role == '{st.text_input}'",
+elif F_choice == "Role based":
+    user_input = st.text_input
+    rule = f"&& request.auth.token.role == '{user_input}'"
 
-    "Logged in": ""
-}
+else:  # Logged in
+    rule = ""
 
 
 st.code(f"""
