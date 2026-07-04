@@ -16,7 +16,6 @@ if choice == 'Standard operation':
         read = st.selectbox(
                 'Select the read type of your choice',
                 [
-                    "Open guider",
                     "🌍 Public Access",
                     "🔐 Authentication",
                     "👤 User Identity",
@@ -24,7 +23,8 @@ if choice == 'Standard operation':
                     "🛡️ Roles & Permissions",
                     "📅 Time-Based Rules",
                     "📄 Document-Based Rules",
-                    "🔗 Cross-Document Checks"
+                    "🔗 Cross-Document Checks",
+                    "Open guider"
                 ]
             )
 
