@@ -125,7 +125,7 @@ mapping = {
 
     "Logged in": ""
 }
-mapping = F
+mapping = F_choice
 
 
 st.code(f"""
