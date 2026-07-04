@@ -16,11 +16,10 @@ if choice == 'Standard operation':
         read = st.selectbox(
                 'Select the read type of your choice',
                 [
-                    "🌍 Public Access",
+                    "🌍 Public/logged in Access",
                     "🔐 Authentication",
                     "👤 User Identity",
                     "👥 Ownership & Membership",
-                    "🛡️ Roles & Permissions",
                     "📅 Time-Based Rules",
                     "📄 Document-Based Rules",
                     "🔗 Cross-Document Checks",
@@ -28,9 +27,37 @@ if choice == 'Standard operation':
                 ]
             )
 
-        if read == '🌍 Public Access':
+        if read ==  "🌍 Public/logged in Access":
+            read1 = st.selectbox('Choose type',
+                                 ["Public","Logged in"])
+          if read1 == 'Logged in':
+              A = st.text_input('The collection')
+              B = st.text_input("The document")
+              C = st.text_input('The subcollection')
+              D_choice = st.selectbox("type?",
+                                 ["Any", "your own"])
+              if D_choice == "Any":
+                  D = "{any}"
+              else:
+                  D = st.text_input("Enter your wildcard")
+                  st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{{database}}/documents {{
+
+    match /{A}/{B}/{C}/{D} {{
+
+      allow read: if request.auth != null;
+
+    }}
+
+  }}
+}}
+""")       
+             if read1 == 'Public':
                 A = st.text_input('The collection')
-                B = st.text_input("The document")
+                B = st.text_input("The document")     
                 C = st.text_input('The subcollection')
                 D_choice = st.selectbox("type?",
                                         ["Any", "your own"])
@@ -60,6 +87,51 @@ service cloud.firestore {{
   }}
 }}
 """)
+            if read == "🔐 Authentication":
+                A = st.text_input('The collection')
+                B = st.text_input("The document")
+                C = st.text_input('The subcollection')
+                D_choice = st.selectbox("type?",
+                                        ["Any", "your own"])
+                if D_choice == "Any":
+                     D = "{any}"
+                else:
+                     user_input = st.text_input("Enter your wildcard")
+                     D = user_input
+                E_choice = st.selectbox("Choose permission",
+    ["Owner only", "Admin", "Specific UID", "Role based"]
+)
+
+mapping = {
+    
+    "Owner only": "request.auth.uid == resource.data.ownerId",
+    
+    "Admin": "request.auth.token.role == 'admin'",
+    
+    "Specific UID": "request.auth.uid == 'SPECIFIC_UID_HERE'",
+    
+    "Role based": "request.auth.token.role == 'ROLE_NAME'"
+}
+
+E = mapping[E_choice]
+         
+                    
+                    st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /{A}/{B}/{C}/{D} {
+
+      allow read: if request.auth != null
+                  && request.auth.uid == "SPECIFIC_UID_HERE";
+
+    }
+
+  }
+}
+
             
 
         
