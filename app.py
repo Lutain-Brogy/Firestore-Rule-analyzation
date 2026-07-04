@@ -28,7 +28,7 @@ if choice == 'Standard operation':
             )
 
         if read ==  "🌍 Public/logged in Access":
-            face= st.selectbox('Choose type',
+            face = st.selectbox('Choose type',
                                  ["Public","Logged in"])
         if face == 'Logged in':
               A = st.text_input('The collection')
