@@ -33,9 +33,9 @@ if choice == 'Standard operation':
                 C = st.text_input('The subcollection')
                 D_choice = st.selectbox("type?",
                                         ["Any", "your own"])
-                 if D_choice == "Any":
+                if D_choice == "Any":
                      D = "any"
-                 else:
+                else:
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input 
                      
