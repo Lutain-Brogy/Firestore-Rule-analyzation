@@ -34,7 +34,7 @@ if choice == 'Standard operation':
                 D_choice = st.selectbox("type?",
                                         ["Any", "your own"])
                 if D_choice == "Any":
-                     D = "any"
+                     D = "{any}"
                 else:
                      user_input = st.text_input("Enter your wildcard")
                      D = user_input 
