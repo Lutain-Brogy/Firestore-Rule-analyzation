@@ -113,7 +113,7 @@ mapping = {
     "Role based": "request.auth.token.role == 'ROLE_NAME'"
 }
 
-E = mapping[E_choice]
+E_choice = mapping
 
 st.code(f"""
 rules_version = '2';
