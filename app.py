@@ -112,22 +112,21 @@ service cloud.firestore {{
 )
 
 
-if F_choice == "Owner only":
-    rule = "&& request.auth.uid == resource.data.ownerId"
+                if F_choice == "Owner only":
+                    rule = "&& request.auth.uid == resource.data.ownerId"
 
-elif F_choice == "Admin":
-    rule = "&& request.auth.token.role == 'admin'"
+                elif F_choice == "Admin":
+                    rule = "&& request.auth.token.role == 'admin'"
 
-elif F_choice == "Specific UID":
-    G = st.text_input('UID')
-    rule = f"&& request.auth.uid == '{G}'"
+                elif F_choice == "Specific UID":
+                    G = st.text_input('UID')
+                    rule = f"&& request.auth.uid == '{G}'"
 
-elif F_choice == "Role based":
-    G = st.text_input('Selected role')
-    rule = f"&& request.auth.token.role == '{G}'"
-
-else:  # Logged in
-    rule = ""
+                elif F_choice == "Role based":
+                    G = st.text_input('Selected role')
+                    rule = f"&& request.auth.token.role == '{G}'"
+                else:  # Logged in
+                    rule = ""
 
 
 st.code(f"""
