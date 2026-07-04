@@ -116,7 +116,7 @@ mapping = {
 E = mapping[E_choice]
          
                     
-                 st.code(f"""
+                    st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {
