@@ -28,9 +28,9 @@ if choice == 'Standard operation':
             )
 
         if read ==  "🌍 Public/logged in Access":
-            read1 = st.selectbox('Choose type',
+            face= st.selectbox('Choose type',
                                  ["Public","Logged in"])
-        if read1 == 'Logged in':
+        if face == 'Logged in':
               A = st.text_input('The collection')
               B = st.text_input("The document")
               C = st.text_input('The subcollection')
@@ -55,7 +55,7 @@ service cloud.firestore {{
   }}
 }}
 """)       
-        if read1 == 'Public':
+        if face == 'Public':
                 A = st.text_input('The collection')
                 B = st.text_input("The document")     
                 C = st.text_input('The subcollection')
