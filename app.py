@@ -102,7 +102,7 @@ service cloud.firestore {{
                      user_input = st.text_input("Enter your wildcard")
                      E = user_input
                
-st.code(f"""
+                     st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
@@ -118,7 +118,6 @@ service cloud.firestore {{
   }}
 }}
 """)
-st.write('hi')
 
             
 
