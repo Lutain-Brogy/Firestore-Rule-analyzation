@@ -87,7 +87,7 @@ service cloud.firestore {{
   }}
 }}
 """)
-            if read == "🔐 Authentication":
+        if read == "🔐 Authentication":
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
