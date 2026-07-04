@@ -13,10 +13,7 @@ if choice == 'Standard operation':
     )
 
     with rule1:
-        tab1, tab2 = st.tabs(["allow", "deny"])
-
-        with tab1:
-            read = st.selectbox(
+        read = st.selectbox(
                 'Select the read type of your choice',
                 [
                     "🌍 Public Access",
@@ -35,9 +32,10 @@ if choice == 'Standard operation':
                 B = st.text_input("The document")
                 C = st.text_input('The subcollection')
                 D = st.selectbox(
-                    'type',
+                   'type',
                     ["Any", "your own"]
                 )
+                E = st.selectbox(["deny", "allow"])
 
                 st.code(f"""
 rules_version = '2';
@@ -46,12 +44,12 @@ service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
     match /{A}/{B}/{C}/{D} {{
-      allow read: if true;
+      allow read: if {E};
     }}
 
   }}
 }}
 """)
 
-        with tab2:
-            st.write('hello')
+        
+            
