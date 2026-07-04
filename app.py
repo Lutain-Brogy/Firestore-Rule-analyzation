@@ -40,9 +40,9 @@ if choice == 'Standard operation':
                      D = user_input 
                      
                 E = st.selectbox(["deny", "allow"])
-                 if E == "allow":
+                if E == "allow":
                      E = "true"
-                 else:
+                else:
                      E = "false"
 
                 st.code(f"""
