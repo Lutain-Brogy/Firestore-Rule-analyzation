@@ -97,7 +97,7 @@ service cloud.firestore {{
                 else:  # Logged in
                     rule = ""
                     
-                    st.code(f"""
+                st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
