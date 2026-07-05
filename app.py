@@ -16,7 +16,7 @@ if choice == 'Standard operation':
         read = st.selectbox(
                 'Select the read type of your choice',
                 [
-                    "🌍 Public/logged in Access",
+                    "🌍 Public",
                     "🔐 Authentication",
                     "👥 Ownership & Membership",
                     "📅 Time-Based Rules",
@@ -26,35 +26,7 @@ if choice == 'Standard operation':
                 ]
             )
 
-        if read ==  "🌍 Public/logged in Access":
-            face = st.selectbox('Choose type',
-                                 ["Public","Logged in"])
-            if face == 'Logged in':
-              A = st.text_input('The collection')
-              B = st.text_input("The document")
-              D_choice = st.selectbox("type?",
-                                 ["Any", "your own"])
-              if D_choice == "Any":
-                  D = "{any}"
-              else:
-                  D = st.text_input("Enter your wildcard")
-                  
-              st.code(f"""
-rules_version = '2';
-
-service cloud.firestore {{
-  match /databases/{{database}}/documents {{
-
-    match /{A}/{B}/{D} {{
-
-      allow read: if request.auth != null;
-
-    }}
-
-  }}
-}}
-""")       
-            if face == 'Public':
+        if read ==  "🌍 Public":
                 A = st.text_input('The collection')
                 B = st.text_input("The document")     
                 D_choice = st.selectbox("type?",
