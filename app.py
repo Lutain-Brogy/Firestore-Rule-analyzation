@@ -18,6 +18,7 @@ if choice == 'Standard operation':
                 [
                     "🌍 Public",
                     "🔐 Authentication",
+                    "👤Create role",
                     "👥 Ownership & Membership",
                     "📅 Time-Based Rules",
                     "📄 Document-Based Rules",
