@@ -39,7 +39,7 @@ if choice == 'Standard operation':
               else:
                   D = st.text_input("Enter your wildcard")
                   
-                  st.code(f"""
+              st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
