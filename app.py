@@ -32,7 +32,6 @@ if choice == 'Standard operation':
             if face == 'Logged in':
               A = st.text_input('The collection')
               B = st.text_input("The document")
-              C = st.text_input('The subcollection')
               D_choice = st.selectbox("type?",
                                  ["Any", "your own"])
               if D_choice == "Any":
@@ -45,7 +44,7 @@ rules_version = '2';
 service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
-    match /{A}/{B}/{C}/{D} {{
+    match /{A}/{B}/{D} {{
 
       allow read: if request.auth != null;
 
