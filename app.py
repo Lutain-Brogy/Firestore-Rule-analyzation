@@ -19,7 +19,7 @@ if choice == 'Standard operation':
                     "🌍 Public",
                     "🔐 Authentication",
                     "👥 Ownership & Membership",
-                    "Time-Based Rules",
+                    "Time based rule",
                     "📄 Document-Based Rules",
                     "🔗 Cross-Document Checks",
                     "Open guider"
@@ -113,7 +113,7 @@ service cloud.firestore {{
   }}
 }}
 """)
-                if read == 'Time-Based Rules':
+                if read == 'Time based rule':
                    st.write('hello')
             
 
