@@ -18,7 +18,6 @@ if choice == 'Standard operation':
                 [
                     "🌍 Public",
                     "🔐 Authentication",
-                    "👤Create role",
                     "👥 Ownership & Membership",
                     "📅 Time-Based Rules",
                     "📄 Document-Based Rules",
@@ -114,6 +113,8 @@ service cloud.firestore {{
   }}
 }}
 """)
+            if read == "📅 Time-Based Rules":
+                st.write( ' hello ')
             
 
         
