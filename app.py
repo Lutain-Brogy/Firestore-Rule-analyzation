@@ -25,10 +25,7 @@ if choice == 'Standard operation':
                     "Open guider"
                 ]
             )
-        
-        if read == 'Time based rule':
-           st.write('read')
-            
+    
 
         if read ==  "🌍 Public":
                 A = st.text_input('The collection')
@@ -117,6 +114,10 @@ service cloud.firestore {{
   }}
 }}
 """)
+    
+        if read == 'Time based rule':
+           st.write('read')
+            
 
         
             
