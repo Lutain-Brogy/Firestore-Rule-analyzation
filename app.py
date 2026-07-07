@@ -114,7 +114,7 @@ service cloud.firestore {{
 }}
 """)
                 if read == "📅 Time-Based Rules":
-                    st.write( ' hello ')
+                    st.write('hello')
             
 
         
