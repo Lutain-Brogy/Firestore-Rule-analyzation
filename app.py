@@ -113,8 +113,8 @@ service cloud.firestore {{
   }}
 }}
 """)
-                if read == 'Time based rule':
-                   st.write('read')
+                 if read == 'Time based rule':
+                    st.write('read')
             
 
         
