@@ -116,7 +116,9 @@ service cloud.firestore {{
 """)
     
         if read == 'Time based rule':
-           st.write('read')
+           time1, time2, time3, time4 = st.tabs( 
+               ["Dates","Release","Expiry","Timestamp"])
+            
             
 
         
