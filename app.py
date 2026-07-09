@@ -63,13 +63,13 @@ service cloud.firestore {{
         if read == "🔐 Authentication":
                 A = st.text_input('The collection')
                 B = st.text_input("The document")
-                D_choice = st.selectbox("type?",
+                C_choice = st.selectbox("type?",
                                         ["Any", "your own"])
-                if D_choice == "Any":
-                     D = "{any}"
+                if C_choice == "Any":
+                     C = "{any}"
                 else:
                      user_input = st.text_input("Enter your wildcard")
-                     D = user_input 
+                     C = user_input 
                 E = st.selectbox('Choose permission type',
                                  ["deny","allow"])
                 if E == 'allow':
@@ -104,7 +104,7 @@ rules_version = '2';
 service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
-    match /{A}/{B}/{D} {{
+    match /{A}/{B}/{C} {{
 
       allow read: if request.auth {E}= null
                   {rule}
@@ -118,7 +118,50 @@ service cloud.firestore {{
         if read == 'Time based rule':
            time1, time2, time3, time4 = st.tabs( 
                ["Dates","Release","Expiry","Timestamp"])
-            
+            with time1
+              A = st.text_input('The collection')
+              B = st.text_input("The document")
+              C_choice = st.selectbox("type?",
+                                        ["Any", "your own"])
+                if C_choice == "Any":
+                     C = "{any}"
+                else:
+                     user_input = st.text_input("Enter your wildcard")
+                     C = user_input
+               D = st.selectbox('Type',
+                                ["Authenticated", "Everyone"])
+               if D == 'Authenticated':
+                   D_option = st.selectbox(
+                       'Deny or allow',
+                       ["Deny", "Allow"])
+                   if D_option == 'Deny':
+                       D_option = 'if request.auth == null;'
+                   else:
+                       D_option = 'if request.auth != null;'
+               if D == 'Everyone':
+                   D_option = st.selectbox(
+                       'Deny or allow',
+                       ["Deny", "Allow"])
+                   if D_option == 'Deny':
+                       D_option = 'if false;'
+                   else:
+                       D_option = 'if true;'
+                                                     
+                                                     
+             st.code(f"""
+rules_version = '2';
+
+service cloud.firestore {{
+  match /databases/{database}/documents {{
+
+    match /{A}/{B}/{C} {{
+      allow read: {D_option}
+                  {E}
+    }}
+
+  }}
+}}
+""")
             
 
         
