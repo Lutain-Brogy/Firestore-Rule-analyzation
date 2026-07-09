@@ -136,15 +136,15 @@ service cloud.firestore {{
                   D_option = st.selectbox('Deny or allow',
                                           ["Deny", "Allow"])
                   if D_option == 'Deny':
-                      D_option = f"if request.auth == null
-                      && request.time >= timestamp.date({Y})
-                      && request.time < timestamp.date({X});
-                                 "
+                      D_option = f"""if request.auth == null
+                    && request.time >= timestamp.date({Y})
+                    && request.time < timestamp.date({X});
+                                 """
                   else:
-                      D_option = f"if request.auth != null
+                      D_option = f"""if request.auth != null
                       && request.time >= timestamp.date({Y})
                       && request.time < timestamp.date({X});
-                                     "
+                                     """
               if D == 'Everyone':
                   Y = st.text_input('From when')
                   X = st.text_input('To when')
