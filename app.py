@@ -118,7 +118,7 @@ service cloud.firestore {{
         if read == 'Time based rule':
            time1, time2, time3, time4 = st.tabs( 
                ["Dates","Release","Expiry","Timestamp"])
-            with time1
+        with time1
               A = st.text_input('The collection')
               B = st.text_input("The document")
               C_choice = st.selectbox("type?",
