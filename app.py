@@ -129,24 +129,32 @@ service cloud.firestore {{
                   user_input = st.text_input("Enter your wildcard")
                   C = user_input
               D = st.selectbox('Type',
-                                ["Authenticated", "Everyone"])
+                               ["Authenticated", "Everyone"])
               if D == 'Authenticated':
-                  D_option = st.selectbox(
-                       'Deny or allow',
-                       ["Deny", "Allow"])
+                  Y = st.text_input('From when')
+                  X = st.text_input('To when')
+                  D_option = st.selectbox('Deny or allow',
+                                          ["Deny", "Allow"])
                   if D_option == 'Deny':
-                      D_option = 'if request.auth == null;'
+                      D_option = f"""
+                      if request.auth == null
+                      && request.time >= timestamp.date({Y})
+                      && request.time < timestamp.date({X});
+                      """
                   else:
-                      D_option = 'if request.auth != null;'
+                      D_option = f"""
+                      if request.auth != null
+                      && request.time >= timestamp.date({Y})
+                      && request.time < timestamp.date({X});
+                      """
               if D == 'Everyone':
-                  D_option = st.selectbox(
-                       'Deny or allow',
-                       ["Deny", "Allow"])
-                  if D_option == 'Deny':
-                      D_option = 'if false;'
-                  else:
-                      D_option = 'if true;'
-                                                     
+                  Y = st.text_input('From when')
+                  X = st.text_input('To when')
+                  D_option = f"""
+                  if request.time >= timestamp.date({Y})
+                  && request.time < timestamp.date({X});
+                  """
+                                
                                                      
         st.code(f"""
 rules_version = '2';
@@ -156,7 +164,6 @@ service cloud.firestore {{
 
     match /{A}/{B}/{C} {{
       allow read: {D_option}
-                  {E}
     }}
 
   }}
