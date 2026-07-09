@@ -123,12 +123,12 @@ service cloud.firestore {{
               B = st.text_input("The document")
               C_choice = st.selectbox("type?",
                                         ["Any", "your own"])
-                if C_choice == "Any":
-                     C = "{any}"
-                else:
-                     user_input = st.text_input("Enter your wildcard")
-                     C = user_input
-               D = st.selectbox('Type',
+              if C_choice == "Any":
+                  C = "{any}"
+              else:
+                  user_input = st.text_input("Enter your wildcard")
+                  C = user_input
+              D = st.selectbox('Type',
                                 ["Authenticated", "Everyone"])
                if D == 'Authenticated':
                    D_option = st.selectbox(
