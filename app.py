@@ -152,7 +152,7 @@ service cloud.firestore {{
 rules_version = '2';
 
 service cloud.firestore {{
-  match /databases/{database}/documents {{
+  match /databases/{{database}}/documents {{
 
     match /{A}/{B}/{C} {{
       allow read: {D_option}
