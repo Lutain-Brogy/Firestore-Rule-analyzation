@@ -130,22 +130,22 @@ service cloud.firestore {{
                   C = user_input
               D = st.selectbox('Type',
                                 ["Authenticated", "Everyone"])
-               if D == 'Authenticated':
-                   D_option = st.selectbox(
+              if D == 'Authenticated':
+                  D_option = st.selectbox(
                        'Deny or allow',
                        ["Deny", "Allow"])
-                   if D_option == 'Deny':
-                       D_option = 'if request.auth == null;'
-                   else:
-                       D_option = 'if request.auth != null;'
-               if D == 'Everyone':
-                   D_option = st.selectbox(
+                  if D_option == 'Deny':
+                      D_option = 'if request.auth == null;'
+                  else:
+                      D_option = 'if request.auth != null;'
+              if D == 'Everyone':
+                  D_option = st.selectbox(
                        'Deny or allow',
                        ["Deny", "Allow"])
-                   if D_option == 'Deny':
-                       D_option = 'if false;'
-                   else:
-                       D_option = 'if true;'
+                  if D_option == 'Deny':
+                      D_option = 'if false;'
+                  else:
+                      D_option = 'if true;'
                                                      
                                                      
              st.code(f"""
