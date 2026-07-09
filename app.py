@@ -149,7 +149,7 @@ service cloud.firestore {{
                   Y = st.text_input('From when')
                   X = st.text_input('To when')
                   D_option = f"""if request.time >= timestamp.date({Y})
-                                 && request.time < timestamp.date({X});
+                  && request.time < timestamp.date({X});
                                  """
                                 
                                                      
@@ -160,8 +160,7 @@ service cloud.firestore {{
   match /databases/{{database}}/documents {{
 
     match /{A}/{B}/{C} {{
-      allow read: {D_option}
-      
+      allow read: {D_option} 
     }}
 
   }}
