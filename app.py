@@ -137,13 +137,13 @@ service cloud.firestore {{
                                           ["Deny", "Allow"])
                   if D_option == 'Deny':
                       D_option = f"""if request.auth == null
-                                     && request.time >= timestamp.date({Y})
-                                     && request.time < timestamp.date({X});
+                      && request.time >= timestamp.date({Y})
+                      && request.time < timestamp.date({X});
                                  """
                   else:
                       D_option = f"""if request.auth != null
-                                     && request.time >= timestamp.date({Y})
-                                     && request.time < timestamp.date({X});
+                      && request.time >= timestamp.date({Y})
+                      && request.time < timestamp.date({X});
                                      """
               if D == 'Everyone':
                   Y = st.text_input('From when')
