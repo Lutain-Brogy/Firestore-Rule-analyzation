@@ -148,7 +148,7 @@ service cloud.firestore {{
                       D_option = 'if true;'
                                                      
                                                      
-             st.code(f"""
+        st.code(f"""
 rules_version = '2';
 
 service cloud.firestore {{
